@@ -113,5 +113,25 @@
                 InorderHelper(node.RightNode);
             }
         }
+
+        public void PostorderTraversal()
+        {
+            PostorderHelper(root);
+        }
+
+        private void PostorderHelper(TreeNode node)
+        {
+            if (node != null)
+            {
+                // Traverse left subtree
+                PostorderHelper(node.LeftNode);
+
+                // Traverse right subtree
+                PostorderHelper(node.RightNode);
+
+                // Output node Data
+                Console.Write($"{node.Data} ");
+            }
+        }
     }
 }
